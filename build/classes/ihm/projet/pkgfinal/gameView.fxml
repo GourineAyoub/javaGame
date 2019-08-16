@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="960.0" style="-fx-background-color: #eceff1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.projet.pkgfinal.GameViewController">
+   <children>
+      <Pane fx:id="questionPane" layoutX="493.0" layoutY="21.0" prefHeight="268.0" prefWidth="439.0" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-background-radius: 10px;">
+         <children>
+            <JFXButton fx:id="checkAnswerButton" contentDisplay="RIGHT" layoutX="323.0" layoutY="220.0" onAction="#checkAnswer" prefHeight="32.0" prefWidth="97.0" style="-fx-background-color: #0086c3; -fx-border-color: #003c8f; -fx-border-width: 0.5px;" text="Check" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="16" />
+               </graphic>
+            </JFXButton>
+            <Label layoutX="18.0" layoutY="67.0" text="Question : ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="number1" layoutX="27.0" layoutY="165.0" maxHeight="40.0" maxWidth="50.0" minHeight="40.0" minWidth="50.0" prefHeight="40.0" prefWidth="50.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="number2" layoutX="110.0" layoutY="165.0" maxHeight="40.0" maxWidth="50.0" minHeight="40.0" minWidth="50.0" prefHeight="40.0" prefWidth="50.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="number3" layoutX="201.0" layoutY="165.0" maxHeight="40.0" maxWidth="50.0" minHeight="40.0" minWidth="50.0" prefHeight="40.0" prefWidth="50.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="number4" layoutX="289.0" layoutY="165.0" maxHeight="40.0" maxWidth="50.0" minHeight="40.0" minWidth="50.0" prefHeight="40.0" prefWidth="50.0" style="-fx-border-color: black;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="equationResultLabel" layoutX="386.0" layoutY="170.0" text="56">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="352.0" layoutY="170.0" text="=">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="opt1" layoutX="83.0" layoutY="170.0" text="*">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="opt2" layoutX="175.0" layoutY="170.0" text="/">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="opt3" layoutX="263.0" layoutY="170.0" text="*">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="101.0" text="Each time you must enter the exact numbers to&#10;make the equation right .&#10;">
+               <font>
+                  <Font name="Comfortaa Regular" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="45.0" fitWidth="50.0" layoutX="154.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@timer.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="timerLabel" layoutX="199.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:30">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Pane prefHeight="268.0" prefWidth="12.0" style="-fx-background-color: #007ac1;" />
+            <ImageView fx:id="bombImage" fitHeight="60.0" fitWidth="60.0" layoutX="369.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+         <effect>
+            <DropShadow height="4.0" radius="2.75" width="9.0" />
+         </effect></Pane>
+      <Pane layoutX="454.0" layoutY="9.0" prefHeight="288.0" prefWidth="48.0" style="-fx-background-color: #eceff1;">
+         <children>
+            <Pane layoutX="35.0" layoutY="9.0" prefHeight="273.0" prefWidth="15.0" style="-fx-background-color: #007ac1;" />
+         </children>
+      </Pane>
+      <Pane layoutX="29.0" layoutY="20.0" prefHeight="640.0" prefWidth="439.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+         <children>
+            <GridPane layoutX="25.0" layoutY="225.0" prefHeight="345.0" prefWidth="378.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" percentWidth="20.0" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" percentHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton fx:id="bt01" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt02" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt03" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt126" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1112" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt12" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt20" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1211" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt22" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt13" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt23" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt30" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt31" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt32" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt33" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt04" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt14" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt24" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt34" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt40" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt41" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt42" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt43" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt44" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt45" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt46" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt47" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt48" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt35" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt25" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt15" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt05" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt06" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt16" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt26" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt36" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt17" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt18" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt07" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt08" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt09" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt010" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt011" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt012" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt19" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt110" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt210" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt27" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt28" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt38" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt37" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt50" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt60" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt61" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt51" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt62" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt71" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt80" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt90" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt100" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt11000" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt120" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt29" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt111" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt39" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt49" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt54" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt52" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt53" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt112" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt67" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt68" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt212" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt411" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt510" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt58" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt66" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt65" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt75" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt85" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt86" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt76" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt70" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt73" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt64" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt87" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt88" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt312" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt410" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt79" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt77" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt96" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt106" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt108" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt109" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1010" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1011" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt114" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt104" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt103" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt102" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt101" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt105" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt710" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt611" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt512" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt712" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt89" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt94" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt84" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt311" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt211" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt310" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt57" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt11222" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt117" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt97" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt910" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt911" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1111" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1110" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt119" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt118" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt116" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt115" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt69" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt83" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt810" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt811" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt912" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt92" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt113" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt128" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt123" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt82" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt72" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt63" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt59" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt56" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="6" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt412" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt511" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt610" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt711" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="11" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt98" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1212" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1012" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt11" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt91" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt125" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt121" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt81" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt129" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt1210" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="10" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt74" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt612" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt124" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="4" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt122" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="2" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt11111" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="11">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt127" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="12">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt21" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt95" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt10" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt78" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="8" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt93" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="3" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt107" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="7" GridPane.rowIndex="10">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt812" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="12" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt99" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="9" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt55" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text="." GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="bt00" buttonType="RAISED" ellipsisString="" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" onAction="#gameButtonClicked" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #29b6f6;" text=".">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXButton>
+               </children>
+            </GridPane>
+            <Label layoutX="40.0" layoutY="87.0" text="Stars">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="28.0" text="Rank">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <JFXButton contentDisplay="RIGHT" layoutX="300.0" layoutY="176.0" onAction="#useStars" style="-fx-background-color: #0086c3; -fx-border-color: #003c8f; -fx-border-width: 0.5px;" text="Use Star" textFill="WHITE">
+               <font>
+                  <Font name="Comfortaa Regular" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#f8ea29" glyphName="STAR" size="20" />
+               </graphic>
+            </JFXButton>
+            <Label layoutX="59.0" layoutY="136.0" text="Next Star ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXProgressBar fx:id="starProgressBar" layoutX="212.0" layoutY="140.0" prefHeight="10.0" progress="0.43" />
+            <Label fx:id="starNumberLabel" layoutX="325.0" layoutY="93.0" text="0 X">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="375.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@star2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rank3ImageView" fitHeight="50.0" fitWidth="50.0" layoutX="256.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rank1ImageView" fitHeight="50.0" fitWidth="50.0" layoutX="370.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@chevron-2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="rank2ImageView" fitHeight="50.0" fitWidth="50.0" layoutX="306.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+         <effect>
+            <DropShadow height="4.0" radius="2.75" width="9.0" />
+         </effect>
+      </Pane>
+      <Pane fx:id="gameDetailsPane" layoutX="492.0" layoutY="310.0" prefHeight="350.0" prefWidth="439.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+         <effect>
+            <DropShadow height="4.0" radius="2.75" width="9.0" />
+         </effect>
+         <children>
+            <Pane layoutY="10.0" prefHeight="80.0" prefWidth="439.0" style="-fx-background-color: #81b9bf;" />
+            <Pane prefHeight="90.0" prefWidth="439.0" style="-fx-background-color: #64c1ff; -fx-border-radius: 10px; -fx-background-radius: 10px;">
+               <children>
+                  <Label layoutX="119.0" layoutY="14.0" text="Score :" textFill="WHITE">
+                     <font>
+                        <Font name="Comfortaa Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scoreLabel" layoutX="327.0" layoutY="20.0" text="123" textFill="WHITE">
+                     <font>
+                        <Font name="Comfortaa Regular" size="40.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="28.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@xp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label layoutX="85.0" layoutY="105.0" text="Dificulty : ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="difficultyLabel" layoutX="335.0" layoutY="103.0" text="Hard">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="144.0" text="Clicked : ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="clickedSquaresLabel" layoutX="335.0" layoutY="142.0" text="15">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="nonClickedSquaresLabel" layoutX="335.0" layoutY="184.0" text="121">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="186.0" text="Non-Clicked : ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="233.0" text="Total Time : ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Text fx:id="totalTimeLabel" layoutX="335.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <JFXNodesList fx:id="floatingButtonsList" layoutX="345.0" layoutY="246.0" maxHeight="90.0" maxWidth="90.0" minHeight="90.0" minWidth="90.0" prefHeight="90.0" prefWidth="90.0" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="39.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@005-gamepad.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="39.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@001-check-mark.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="39.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@002-unchecked.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="39.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@003-clock.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </children>
+</AnchorPane>

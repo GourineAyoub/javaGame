@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="524.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.projet.pkgfinal.GameWinViewController">
+   <children>
+      <JFXButton fx:id="loadGame" contentDisplay="CENTER" layoutX="71.0" layoutY="292.0" onAction="#loadGame" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #0086c3; -fx-border-color: #003c8f; -fx-border-width: 0.5px; -fx-border-radius: 100%; -fx-background-radius: 100%;" text="&#10;" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CHAIN" size="40" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="newGame" contentDisplay="CENTER" layoutX="226.0" layoutY="310.0" onAction="#newGame" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #0086c3; -fx-border-color: #003c8f; -fx-border-width: 0.5px; -fx-border-radius: 100%; -fx-background-radius: 100%;" text="&#10;" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="REPLY" size="40" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="saveGame" contentDisplay="CENTER" layoutX="382.0" layoutY="292.0" onAction="#saveGame" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #0086c3; -fx-border-color: #003c8f; -fx-border-width: 0.5px; -fx-background-radius: 100%; -fx-border-radius: 100%;" text="&#10;" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Regular" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="40" />
+         </graphic>
+      </JFXButton>
+      <Ellipse fx:id="background2" fill="DODGERBLUE" layoutX="266.0" layoutY="77.0" radiusX="266.0" radiusY="225.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0px;" />
+      <Rectangle fx:id="background1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="263.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0px;" width="543.0" />
+      <ImageView fx:id="backgroungIcon" fitHeight="300.0" fitWidth="300.0" layoutX="122.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.6;">
+         <image>
+            <Image url="@success.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="gameStateSentence" layoutX="127.0" text="You Win !" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="60.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="101.0" layoutY="73.0" text="Score :  " textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="101.0" layoutY="121.0" text="Total Time : " textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="101.0" layoutY="166.0" text="Rank : " textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="101.0" layoutY="217.0" text="Stars : " textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label fx:id="gameScore" layoutX="356.0" layoutY="74.0" text="1205" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label fx:id="gameTotalTime" layoutX="356.0" layoutY="122.0" text="15:30" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label fx:id="gameRank" layoutX="356.0" layoutY="167.0" text="A" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label fx:id="gameStars" layoutX="356.0" layoutY="218.0" text="X5" textFill="WHITE">
+         <font>
+            <Font name="Comfortaa Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

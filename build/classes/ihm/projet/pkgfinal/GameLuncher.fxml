@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.projet.pkgfinal.GameLuncherController">
+    <children>
+      <Label layoutX="14.0" layoutY="496.0" text="All Rights Reserved To ( Abdi Mourad, Gourine Ayoub ).">
+         <font>
+            <Font name="Comfortaa Bold" size="25.0" />
+         </font>
+         <effect>
+            <DropShadow radius="7.725" width="11.9" />
+         </effect>
+      </Label>
+      <ImageView fx:id="backgroundImage" fitHeight="657.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.07;">
+         <image>
+            <Image url="@numbersBackground.png" />
+         </image></ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="150.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" rotate="-40.0">
+         <image>
+            <Image url="@bomb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="401.0" fitWidth="385.0" layoutX="477.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" rotate="-100.0" style="-fx-opacity: 0.1;">
+         <image>
+            <Image url="@bomb.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="loadGameButton" layoutX="619.0" layoutY="178.0" onAction="#loadGame" prefHeight="60.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #003c8f; -fx-border-width: 2px;" text="Load Game" textFill="#0086c3">
+         <font>
+            <Font name="Comfortaa Bold" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="scoreBoardButton" layoutX="619.0" layoutY="271.0" onAction="#scoreBoard" prefHeight="60.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #003c8f; -fx-border-width: 2px;" text="Score Board" textFill="#0086c3">
+         <font>
+            <Font name="Comfortaa Bold" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="exitButton" layoutX="619.0" layoutY="366.0" onAction="#exitGame" prefHeight="60.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #003c8f; -fx-border-width: 2px;" text="Exit" textFill="#0086c3">
+         <font>
+            <Font name="Comfortaa Bold" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </JFXButton>
+      <Label layoutX="85.0" layoutY="82.0" text="B  mbs">
+         <font>
+            <Font name="Comfortaa Regular" size="100.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="179.0" text="&amp;">
+         <font>
+            <Font name="Comfortaa Regular" size="100.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="275.0" text="Numb  rs">
+         <font>
+            <Font size="100.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="273.0" text="3" textFill="#1573b2">
+         <font>
+            <Font name="Comfortaa Regular" size="100.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="newGameButton" layoutX="619.0" layoutY="94.0" onAction="#newGame" prefHeight="60.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #003c8f; -fx-border-width: 2px;" text="New Game" textFill="#0086c3">
+         <font>
+            <Font name="Comfortaa Bold" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </JFXButton>
+    </children>
+</AnchorPane>
